@@ -42,17 +42,7 @@ class Review:
             raise ValueError(
                     "summary must be a non-empty string"
                 )
-    @property
-    def employee_id(self):
-        return self._employee_id
-    @employee_id.setter
-    def employee_id(self, employee_id):
-        if type(employee_id) is int and Employee.find_by_id(employee_id):
-            self._employee_id = employee_id
-        else:
-            raise ValueError(
-                    "employee_id must reference an employee in the database"
-                )
+
 
     @classmethod
     def create_table(cls):
